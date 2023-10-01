@@ -27,9 +27,9 @@ def keep_alive():
 token = os.environ['DISCORD_TOKEN']
 # channel id of the channel you want the bot obfuscate in. 
 # with developer settings enabled right click channel and copy id. (bot works in direct messages as well)
-channel_id = 994709144449851452
+channel_id = 0
 
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix=".")
 bot.remove_command("help")
 
 
@@ -80,8 +80,8 @@ def obfuscation(path, author):
 
 
 status = cycle([
-    'for .lua files to obfuscate.', 'for .lua files to obfuscate..',
-    'for .lua files to obfuscate...'
+    'VISHION DATABASE', 'VISHION OBFUSCATORS',
+    'VISHION SECRUITY SYSTEM'
 ])
 
 
@@ -117,8 +117,8 @@ async def on_message(message):
                 if message.attachments[0].url:
                     if '.lua' not in url:
                         embed = discord.Embed(
-                            title=f"***Wrong file extension!***",
-                            description=f"only ``.lua`` allowed",
+                            title=f"***NOT SUPPORTED EXTENSION***",
+                            description=f"ONLY ``.LUA`` IS SUPPORTED",
                             color=0xFF3357)
                         message = await channel.send(embed=embed)
                         dm = await message.author.create_dm()
@@ -132,7 +132,7 @@ async def on_message(message):
                         if not os.path.exists(obfuscated_dir):
                             os.makedirs(obfuscated_dir)
 
-                        print(f'\nNew lua script received from {author}.')
+                        print(f'\nNEW LUA EXTENSION RECIEVED FROM {author}.')
                         print(
                             f'Attachment Link: {message.attachments[0].url}\n')
                         response = requests.get(url)
@@ -143,7 +143,7 @@ async def on_message(message):
 
                         open(path, "wb").write(response.content)
                         obfuscation(path, author)
-                        embed = discord.Embed(title="File has been obfuscated",
+                        embed = discord.Embed(title="SUCCESFULLY OBFUSCATED FILE",
                                               color=0x3357FF)
                         dm = await message.author.create_dm()
                         await dm.send(
@@ -154,8 +154,8 @@ async def on_message(message):
                 if message.attachments[0].url:
                     if '.lua' not in url:
                         embed = discord.Embed(
-                            title=f"***Wrong file extension!***",
-                            description=f"only ``.lua`` allowed",
+                            title=f"***NOT SUPPORTED EXTENSION***",
+                            description=f"ONLY ``.LUA`` IS SUPPORTED",
                             color=0xFF3357)
                         message = await channel.send(embed=embed)
                         dm = await message.author.create_dm()
@@ -169,7 +169,7 @@ async def on_message(message):
                         if not os.path.exists(obfuscated_dir):
                             os.makedirs(obfuscated_dir)
 
-                        print(f'\nNew lua script received from {author}.')
+                        print(f'\nNEW LUA EXTENSION RECIEVED FROM {author}.')
                         print(
                             f'Attachment Link: {message.attachments[0].url}\n')
                         response = requests.get(url)
@@ -180,7 +180,7 @@ async def on_message(message):
 
                         open(path, "wb").write(response.content)
                         obfuscation(path, author)
-                        embed = discord.Embed(title="File has been obfuscated",
+                        embed = discord.Embed(title="SUCCESFULLY OBFUSCATED FILE",
                                               color=0x3357FF)
                         await channel.send(
                             embed=embed,
